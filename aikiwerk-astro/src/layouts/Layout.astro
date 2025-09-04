@@ -22,6 +22,7 @@ const { title, lang = 'de' } = Astro.props;
 		<header>
 			<div class="container">
 				<div class="logo">
+					<img src="/images/aikiwerk-logo.png" alt="Aikiwerk Logo" />
 					<h1><a href="/">Aikiwerk</a></h1>
 				</div>
 				<nav>
@@ -35,9 +36,7 @@ const { title, lang = 'de' } = Astro.props;
 			</div>
 		</header>
 		
-		<div class="container">
-			<slot />
-		</div>
+		<slot />
 		
 		<footer>
 			<div class="container">
