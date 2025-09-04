@@ -19,29 +19,61 @@ const { title, lang = 'de' } = Astro.props;
 		<link rel="stylesheet" href="/styles/global.css" />
 	</head>
 	<body>
-		<header>
+		<div class="header-image">
+			<img src="/images/hakama-header.jpg" alt="Aikido Training" />
+		</div>
+		
+		<header class="site-header">
 			<div class="container">
 				<div class="logo">
 					<img src="/images/aikiwerk-logo.png" alt="Aikiwerk Logo" />
-					<h1><a href="/">Aikiwerk</a></h1>
+					<div class="site-title">
+						<h1><a href="/">aikiwerk</a></h1>
+						<p class="tagline">Aikido-Trainingsgemeinschaft · Berlin-Steglitz</p>
+					</div>
 				</div>
-				<nav>
-					<ul>
-						<li><a href="/">Start</a></li>
-						<li><a href="/english">English</a></li>
-						<li><a href="/aikido">Aikido</a></li>
-						<li><a href="/kontakt">Kontakt</a></li>
-					</ul>
-				</nav>
 			</div>
 		</header>
+		
+		<nav class="main-nav">
+			<div class="container">
+				<ul>
+					<li><a href="/">Start</a>
+						<ul class="sub-menu">
+							<li><a href="/english">English</a></li>
+						</ul>
+					</li>
+					<li><a href="/aikido">Aikido</a></li>
+					<li><a href="/kontakt">Kontakt</a></li>
+					<li><a href="/training">Training</a></li>
+					<li><a href="/team">Team</a></li>
+					<li><a href="/aktuelles">Aktuelles</a>
+						<ul class="sub-menu">
+							<li><a href="/sommer">Im Sommer nur Dienstags</a></li>
+							<li><a href="/jorma">Jorma in Berlin</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
 		
 		<slot />
 		
 		<footer>
 			<div class="container">
-				<p>&copy; {new Date().getFullYear()} Aikiwerk. Alle Rechte vorbehalten.</p>
-				<p>Kontakt: <a href="mailto:training@aikiwerk.de">training@aikiwerk.de</a></p>
+				<div class="footer-content">
+					<div class="footer-links">
+						<a href="mailto:training@aikiwerk.de">training@aikiwerk.de</a>
+						<a href="https://facebook.com" target="_blank">Facebook</a>
+						<a href="https://twitter.com" target="_blank">Twitter</a>
+						<a href="/impressum">Impressum</a>
+						<a href="/credits">Credits</a>
+					</div>
+					<div class="search-section">
+						<input type="search" placeholder="Suchen..." />
+						<button type="submit">Suchen</button>
+					</div>
+				</div>
 			</div>
 		</footer>
 	</body>
